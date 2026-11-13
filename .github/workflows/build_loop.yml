@@ -220,6 +220,9 @@ jobs:
           fi
 
           # Submodule Loop patches:
+          # Carb absorption times 0.5h / 4h / 6h
+         curl https://github.com/Rude55/Loop/commit/c6cbef389103e60f7b34984eba7bd29a7c81599b.patch | git apply --directory=Loop -v --whitespace=fix
+
           # Template for customizing submodule Loop (changes Loop app name to "CustomLoop")
           # Remove the "#" sign from the beginning of the line below to activate:
           #curl https://github.com/loopnlearn/Loop/commit/d206432b024279ef710df462b20bd464cd9682d4.patch | git apply --directory=Loop -v --whitespace=fix
