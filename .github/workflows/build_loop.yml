@@ -222,6 +222,8 @@ jobs:
           # Submodule Loop patches:
           # Carb absorption times 0.5h / 4h / 6h
           curl https://github.com/Rude55/Loop/commit/c6cbef389103e60f7b34984eba7bd29a7c81599b.patch | git apply --directory=Loop -v --whitespace=fix
+          # Sport-Override: Temp-Basal bis 2 h
+          curl https://github.com/Rude55/Loop/commit/4992c5f918e7eb7f082c180d628c11a3c61cbe6d.patch | git apply --directory=Loop -v --whitespace=fix
 
           # Template for customizing submodule Loop (changes Loop app name to "CustomLoop")
           # Remove the "#" sign from the beginning of the line below to activate:
