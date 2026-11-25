@@ -218,13 +218,15 @@ jobs:
           if $(ls ./patches/* &> /dev/null); then
           git apply ./patches/* --allow-empty -v --whitespace=fix
           fi
-
+          # Profile (Loop and Learn), feste Version
+          curl https://raw.githubusercontent.com/loopandlearn/customization/17bacff0702cf421b4652af9b0ed304192a5f9e1/profiles/dev_profiles.patch | git apply -v --whitespace=fix
           # Submodule Loop patches:
           # Carb absorption times 0.5h / 4h / 6h
           curl https://github.com/Rude55/Loop/commit/c6cbef389103e60f7b34984eba7bd29a7c81599b.patch | git apply --directory=Loop -v --whitespace=fix
           # Sport-Override: Temp-Basal bis 2 h
           curl https://github.com/Rude55/Loop/commit/4992c5f918e7eb7f082c180d628c11a3c61cbe6d.patch | git apply --directory=Loop -v --whitespace=fix
-
+          # Sport-Override: 3 h, Niedrig-Grenze, Rundung
+          curl https://github.com/Rude55/Loop/commit/f4cad13d5364e98330f590a2aace94f2a53ada65.patch | git apply --directory=Loop -v --whitespace=fix
           # Template for customizing submodule Loop (changes Loop app name to "CustomLoop")
           # Remove the "#" sign from the beginning of the line below to activate:
           #curl https://github.com/loopnlearn/Loop/commit/d206432b024279ef710df462b20bd464cd9682d4.patch | git apply --directory=Loop -v --whitespace=fix
